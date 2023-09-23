@@ -3,3 +3,4 @@ website/.env
 *.xlsx
 website/app_test.js
 /commentsOnlyJS
+/node_modules
