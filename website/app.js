@@ -1,5 +1,3 @@
-const apiKey = '<api_key>&units=metric';
-
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = (d.getMonth()+ 1) + '.'+ d.getDate()+'.'+ d.getFullYear();
@@ -18,7 +16,7 @@ const generate = document.getElementById('generate').addEventListener('click', f
 })
 
 const endPointData = async (zipCode, feelings) => {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}`);
+    const res = await fetch(`/fetchWeather/${zipCode}`);
     try {
         const data = await res.json();
         console.log(data);

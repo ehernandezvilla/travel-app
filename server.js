@@ -1,3 +1,8 @@
+const fetch = require('node-fetch');
+require('dotenv').config();
+
+const apiKey = `${process.env.API_KEY}&units=metric`;
+
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
@@ -57,7 +62,19 @@ app.get('/weather', (req, res) => {
     res.json(weatherData);
 });
 
-
+app.get('/fetchWeather/:zip', async (req, res) => {
+    const zipCode = req.params.zip;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}`;
+    
+    try {
+        const apiResponse = await fetch(apiUrl);
+        const data = await apiResponse.json();
+        res.send(data);
+    } catch (error) {
+        console.log("error", error);
+        res.status(500).send(error);
+    }
+});
 
 
 
