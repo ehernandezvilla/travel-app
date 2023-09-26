@@ -1,0 +1,241 @@
+/*General */
+.main_body {
+    display: grid;
+    grid-template-rows: 3(1fr) auto;
+    border: 1px solid red; /*Debug purposes*/
+}
+
+/*End General*/
+
+/*Nav Bar */
+nav {
+    background-color: #26577C;
+    color: white;
+    height: 100px;
+    font-family: Sansita;
+}
+
+#header{
+    position: absolute;
+    font-size: 35px;
+    padding-left: 20%;
+}
+
+
+/*End Nav Bar */
+
+/*Body*/
+/*Main*/
+#all_body {
+    background-color: white;
+}
+/*End Main*/
+
+
+/*End Body*/
+
+/*Middle*/
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 63px;
+}
+
+
+
+#txt {
+    display: block; /* Cambio a block */
+    padding: 50px 10px; /* Añadir padding para centrar el contenido verticalmente */
+    background-color: white;
+    width: 50%;
+    height: 300px;
+    /* border: 1px solid black; */
+}
+
+/* Img */
+
+#img {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will center the image vertically */
+    padding: 10px;
+    background-color:white;
+    width: 50%;
+    height: 300px;
+}
+
+img {
+    width: 600px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 25%;
+}
+
+#img:hover {
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/*End image */
+
+#txt {  /* style container for right text container */
+    /* existing styles */
+    position: relative;
+    margin-top: 3vw;
+    font-family: Sansita;
+}
+
+#txt h2 {
+    margin-bottom: 20px; /* space below the heading */
+}
+
+.btn-container {
+    display: flex; /* Alinear los botones horizontalmente */
+    justify-content: left;
+    margin-left: -10px; 
+    margin-bottom: 20px; /* Espacio debajo de los botones */
+}
+
+.btn-container button {
+    margin: 0 10px; /* Espacio entre los botones */
+}
+
+.trip-info {
+    /* any additional styles for the paragraph */
+}
+
+/* Form */	
+
+#form_body {
+    position: relative;
+    background-color: #E55604;
+    height: 286px;
+    text-align: center;
+    border: 10px solid #000; 
+    font-family: Sansita;
+    font-size: 30px;
+    padding-top: 20px;
+}       
+
+
+/* Estilo para el botón */
+input[type="submit"] {
+    background-color: #26577C; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+    font-size: 16px; /* Tamaño del texto */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+}
+
+/* Estilo para el botón al pasar el cursor por encima */
+input[type="submit"]:hover {
+    background-color: #1F4A6A; /* Color de fondo un poco más oscuro al pasar el cursor por encima */
+}
+
+/* Estilo para el botón al hacer clic */
+input[type="submit"]:active {
+    background-color: #163D54; /* Color de fondo aún más oscuro al hacer clic */
+}
+
+/* Estilo para el placeholder */
+#POST-name::placeholder {
+    color: #888; /* Color gris claro */
+    font-style: italic; /* Estilo cursiva */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+/* Para navegadores WebKit como Safari y Chrome */
+#POST-name::-webkit-input-placeholder {
+    color: #888;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Para navegadores Firefox */
+#POST-name::-moz-placeholder {
+    color: #888;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Para Internet Explorer */
+#POST-name:-ms-input-placeholder {
+    color: #888;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/*End Form*/
+
+/*End Middle*/
+
+/* Footer */
+footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-family: Sansita;
+}
+
+/* Buttons */
+
+.btn1 {
+    background-color: #26577C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn2 {
+    background-color: whitesmoke;
+    color: #26577C;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border:2px solid #26577C;
+}
+
+.btn1:hover {
+    background-color: #1A3A4A;
+}
+
+.btn2:hover {
+    background-color: #C60000;
+    border:2px solid #fff;
+    color: white;
+}
