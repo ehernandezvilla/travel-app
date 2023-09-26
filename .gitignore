@@ -4,3 +4,5 @@ website/.env
 website/app_test.js
 /commentsOnlyJS
 /node_modules
+/AnimaPackage-Html-uW42g
+*.zip
