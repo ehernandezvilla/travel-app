@@ -75,7 +75,7 @@ app.post('/getGeonames', async (req, res) => {
         }
 
         const data = await apiResponse.json();
-        // console.log(data)
+        console.log(data)
         const toponymName = data.geonames[0].toponymName;
         const countryName = data.geonames[0].countryName;
 
