@@ -1,38 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Weather Journal</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/travel-app/src/client/assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Travel App - Bakslash</title>
 </head>
 
 <body>
-    <div id="app">
-        <div class="holder headline">
-            <h1>&#x2601; Weather Journal App</h1>
+    <nav id="main-nav" class="all_body">
+        <div id="header">
+            <h1>Travel Planner</h1>
         </div>
-        <div class="holder zip">
-            <label for="zip">Enter ZIP and country code here. </br> The format as to be ZIP,code "Don't use spaces after the ,"</label>
-            <input type="text" id="zip" placeholder="Enter zip code here. e.g. 94040,us">
-            <p>To check the allowed ZIP codes and city/country codes please refer to <a href="https://openweathermap.org/">openweathermap</a></p>
-        </div>
-        <div class="holder feel">
-            <label for="feelings">How are you feeling today?</label>
-            <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
-            <button id="generate" type="submit"> Generate </button>
-        </div>
-        <div class="holder entry">
-            <div class="title">Most Recent Entry</div>
-            <div id="entryHolder">
-                <div id="date"></div>
-                <div id="temp"></div>
-                <div id="content"></div>
+    </nav>
+    <div id="main_body" class="all_body">
+        <div class="container">
+            <div id="img">
+                <img src="https://a.cdn-hotels.com/gdcs/production164/d1916/a3c64a1f-b238-4947-896f-27d7a1f51c89.jpg?impolicy=fcrop&w=800&h=533&q=medium"
+                    alt="nyc"> <!-- include variable from PixelAPI-->
+            </div>
+            <div id="txt">
+                <div class="city-travel">
+                    <label for="city" id="city-header">My Trip to:</label>
+                    <textarea id="city" id="destination-holder" name="city" rows="1" cols="30"
+                        placeholder="Destination"></textarea> <!-- include variable from PixelAPI-->
+                    <button id="city-btn" class="btn1">search</button>
+                </div>
+                <br>
+                <!-- <div class="btn-container">
+                    <button class="btn1" id="save_trip">save trip</button>
+                    <button class="btn2" id="remove_trip">remove trip</button>
+                </div> -->
+                <p class="trip-info" id="api-coci">New york, USA is 220 days away</p> <!-- from the form date inputed to the actual date-->
+                <p class="trip-info" id="api-geonames-pop">Population:</p>
+                <p class="trip-info" id="api-geonames-adminCode1">Administrative code:</p>
+                <!-- include variables response from API -->
+                <h3>Typical weather for then:</h3>
+                <p class="trip-info" id="api-weather">High - 46, Low - 35<br> <!-- include variable response from API-->
+                    Mostly cloudy throughout the day</p>
             </div>
         </div>
     </div>
-    <script src="app.js" type="text/javascript"></script>
-
+    </div>
+    <!-- end all body -->
+    <div id="form_body" class="all_body">
+        <div id="form-container">
+            <form action="#" method="post">
+                <label for="POST-name">My trip to:</label>
+                <input id="POST-name" type="text" name="name" placeholder="Enter location" />
+                <br>
+                <label for="POST-date">Departing:</label>
+                <input id="POST-date" type="date" name="date" />
+                <br>
+                <br>
+                <input type="submit" value="save your trip" disabled /> <!-- disable until the form is filled -->
+            </form>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <p>created by: <a href src="">ehernandezvilla</href>
+        </p>
+    </footer>
+    <!-- <script src="/travel-app/src/client/assets/js/test.js"></script> -->
+    <script src="/travel-app/src/client/assets/js/formHandler.js"></script>
 </body>
+
 </html>

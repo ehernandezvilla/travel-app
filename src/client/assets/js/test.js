@@ -1,11 +1,9 @@
 
-const trip = document.getElementById('save_trip');
-const text_apiGeo = document.getElementById('api-geo'); 
-const text_apiWeather = document.getElementById('api-weather');
+const trip = document.getElementById('city-btn');
+const destination = document.querySelector('#city');
+
 trip.addEventListener('click', function (event) { 
-    console.log('trip saved');
-    text_apiGeo.innerText = 'API Geo OK!'
-    text_apiWeather.innerText = 'API Weather OK!'
+    console.log(destination.value);
 });
 
 

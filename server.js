@@ -1,7 +1,12 @@
 const fetch = require('node-fetch');
 require('dotenv').config();
 
-const apiKey = `${process.env.API_KEY}&units=metric`;
+
+const PIXABAY_API = `${process.env.PIXABAY_API}`;
+const GEONAMES_USERNAME = `${process.env.GEONAMES_USERNAME}`;
+const GEONAMES_URL = `http://api.geonames.org/searchJSON?maxRows=1`
+
+
 
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
@@ -18,63 +23,88 @@ app.use(bodyParser.json());
 
 // Cors for cross origin allowance
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+    origin: '*' // All the origins
+}));
+
 // Initialize the main project folder
 app.use(express.static('website'));
 
-const port = 3000;
+const port = 8080;
 // Setup Server
 const server = app.listen(port, listening);
 function listening(){
     console.log(`running on localhost: ${port}`);
 };
 
-// All routes 
+// Endpoints 
 
-// GET route /all example
+// GET route /all
 
 app.get('/all', sendData);
-
 function sendData (request, response){
-response.send('Welcome to the Weather Journal App Project!');
+response.send('Welcome to the travel app project!');
 };
 
-// POST route 
+// POST Test 
 
-weatherData = [];
+// app.post('/test', async (req, res) => {
+//     try {
+//         const formValue = req.body.destination;
+//         const [city, country] = req.body.destination.split(',');
+//         console.log(city, country);
+//         // console.log(formValue.split(','));
+//         res.json({message: 'Success!', data: formValue});
+//     }
+//     catch {
+//         console.log('error', error);
+//         res.status(500).send(error);
+//     }
+// });
 
-app.post('/weather', addWeather);
+// GET getGeonames
 
-function addWeather(req, res) {
-    const newEntry = {
-        temperature: req.body.temperature, // Openweather API
-        date: req.body.date, // Openweather API
-        feelings: req.body.feelings // Capture the feeling of the user 
-    }
-    weatherData.push(newEntry);
-    console.log(weatherData);
-    res.json({ success: true, message: "Data added successfully!", data: weatherData });
-}
 
-// GET route /weather
-
-app.get('/weather', (req, res) => {
-    res.json(weatherData);
-});
-
-app.get('/fetchWeather/:zip', async (req, res) => {
-    const zipCode = req.params.zip;
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}`;
-    
+app.post('/getGeonames', async (req, res) => {
     try {
-        const apiResponse = await fetch(apiUrl);
+        const [city, country] = req.body.destination.split(',');
+        const apiResponse  = await fetch(`${GEONAMES_URL}&name_startsWith=${city}&country=${country}&username=${GEONAMES_USERNAME}`);
+
+        if(!apiResponse.ok) {
+            throw new Error(`HTTP error! status: ${apiResponse.status}`);
+        }
+
         const data = await apiResponse.json();
-        res.send(data);
-    } catch (error) {
-        console.log("error", error);
-        res.status(500).send(error);
+        // console.log(data)
+        const toponymName = data.geonames[0].toponymName;
+        const countryName = data.geonames[0].countryName;
+
+        // Solicitud a Pixabay
+
+        const PIXABAY_API = `${process.env.PIXABAY_API}`;
+        const PIXABAY_URL = `https://pixabay.com/api/?key=${PIXABAY_API}&q=${toponymName},%20${countryName}&image_type=photo&pretty=true&order=popular&per_page=3`;
+
+        const pixabayResponse = await fetch(PIXABAY_URL);
+
+        if (!pixabayResponse.ok) {
+            const errorMessage = await pixabayResponse.text();
+            console.error(`Error from Pixabay: ${errorMessage}`);
+            throw new Error(`Error from Pixabay: ${errorMessage}`);
+        }
+
+        const pixabayData = await pixabayResponse.json();
+        // console.log(pixabayData) // Respuesta completa de Pixabay
+        // Primera imagen de la respuesta > LargeURL
+        const imageURL = pixabayData.hits[0].largeImageURL;
+        res.json({message: 'Success!', imageURL: imageURL});
+    } catch(error) {
+        console.error(`Could not fetch data: ${error}`);
+        res.status(500).json({ error: 'Server Error' });
     }
 });
+
+
+
 
 
 
