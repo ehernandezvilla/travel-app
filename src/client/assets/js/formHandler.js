@@ -26,9 +26,15 @@ function handleButtonClick() {
             throw new Error(data.error);
         }
         console.log(data);
+
+        // Update the image 
         const imageUrl = data.imageURL;
         const imageElement = document.getElementById('img').querySelector('img');
         imageElement.src = imageUrl;
+
+        // Update the weather data in the HTML
+        const weatherElement = document.getElementById('api-weather');
+        weatherElement.innerHTML = `Temperature: ${data.temperature}°C \n Mostly ${data.weatherDescription} during the day`;
     })
     .catch(error => console.error('There was a problem with the fetch operation', error));
 }
