@@ -49,6 +49,7 @@ nav {
     height: 100px;
     font-family: Kanit;
     padding-bottom: 20px;
+    margin-top: -45px;
 }
 
 #header{
@@ -90,6 +91,7 @@ nav {
     font-family: Sansita;
     border-radius: 10px;
     border: 1px solid red;
+    box-shadow: #000 0px 0px 10px;
 }
 
 #trips-container {
@@ -102,7 +104,7 @@ nav {
 #form-container {
     display: flex;
     flex-direction: column;
-    padding-top: 63px;
+    padding-top: 50px;
 }
 
 
@@ -112,8 +114,10 @@ nav {
     padding: 50px 10px; /* Añadir padding para centrar el contenido verticalmente */
     background-color: white;
     width: 40%;
-    height: 300px;
+    /* height: 300px; */
     border: 1px solid red;
+    box-shadow: #000 0px 0px 10px;
+    border-radius: 10px;
     
 }
 
@@ -175,12 +179,12 @@ img {
 #form_body {
     position: relative;
     background-color: #E55604;
-    height: 286px;
+    height: 230px;
     text-align: center;
     border: 10px solid #000; 
     font-family: Sansita;
     font-size: 30px;
-    padding-top: 20px;
+    margin-top: 0px;;
 }       
 
 
@@ -232,14 +236,14 @@ footer {
 }
 
 .btn2 {
-    background-color: whitesmoke;
-    color: #26577C;
+    background-color: black;
+    color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    border:2px solid #26577C;
+    /* border:2px solid #26577C; */
 }
 
 .btn1:hover {
@@ -248,6 +252,6 @@ footer {
 
 .btn2:hover {
     background-color: #C60000;
-    border:2px solid #fff;
+    /* border:2px solid #fff; */
     color: white;
 }

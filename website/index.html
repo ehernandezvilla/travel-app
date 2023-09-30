@@ -33,10 +33,10 @@
                     <button id="city-btn" class="btn1">search</button>
                 </div>
                 <br>
-                <!-- <div class="btn-container">
+                <div class="btn-container">
                     <button class="btn1" id="save_trip">save trip</button>
-                    <button class="btn2" id="remove_trip">remove trip</button>
-                </div> -->
+                    <!-- <button class="btn2" id="remove_trip">remove trip</button> -->
+                </div>
                 <p class="trip-info" id="api-coci">Search to display the information for your trip</p> <!-- from the form date inputed to the actual date-->
                 <!-- <p class="trip-info" id="api-geonames-pop">Population:</p>
                 <p class="trip-info" id="api-geonames-adminCode1">Administrative code:</p> -->
@@ -46,11 +46,14 @@
                     </p>
             </div>
             <div id="local-storage">
-                <h3>My saved trips</h3>
+                <h2>My saved trips</h2>
                 <div id="trips-container">
-                    <h4>My trip to: {}</h4>
-                    <p>temperature: {}</p>
-                    <p>description of weather: {}</p>
+                    <h3>My saved trips</h3>
+                    <h4>Items</h4>
+                    <ul></ul>
+                    <br>
+                    <br>
+                    <button id="remove_trip" class="btn2">Clear All</button>
                 </div>
             </div>
         </div>
@@ -78,6 +81,7 @@
     </footer>
     <!-- <script src="/travel-app/src/client/assets/js/test.js"></script> -->
     <script src="/travel-app/src/client/assets/js/formHandler.js"></script>
+    <script src="/travel-app/src/client/assets/js/localStorage.js"></script>
 </body>
 
 </html>
