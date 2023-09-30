@@ -10,22 +10,22 @@
 .city-travel {
     display: flex;           /* Establece los elementos en una fila */
     align-items: center;     /* Centra los elementos verticalmente */
-    gap: 10px;               /* Espacio entre los elementos */
+    gap: 5px;               /* Espacio entre los elementos */
 }
 
 #city-header {
-    font-size: 36px;
+    font-size: 2.3vw;
     font-weight: bold; 
     margin: 0;               /* Elimina el margen predeterminado */
 }
 
 textarea {
     width: 3px !important;
-    height: auto;
+    height: auto;;
     border-radius: 10px;
     padding: 5px;
-    flex-grow: 0.5;    /* Permite que el textarea crezca para ocupar el espacio disponible */
-    font-size: 30px;
+    flex-grow: 1;    /* Permite que el textarea crezca para ocupar el espacio disponible */
+    font-size: 1.5vw;
     font-family: Sansita;
     font-weight: bold;
     border: 0px solid #26577C;
@@ -84,10 +84,11 @@ nav {
 #local-storage {
     color:white;
     background-color: #4E4C46;
-    width: 30%;
+    width: 20%;
     text-align: center;
     font-family: Sansita;
     border-radius: 10px;
+    border: 1px solid red;
 }
 
 #trips-container {
@@ -109,9 +110,10 @@ nav {
     display: block; /* Cambio a block */
     padding: 50px 10px; /* Añadir padding para centrar el contenido verticalmente */
     background-color: white;
-    width: 50%;
+    width: 30%;
     height: 300px;
-    /* border: 1px solid black; */
+    border: 1px solid red;
+    
 }
 
 /* Img */
@@ -120,18 +122,16 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center; /* This will center the image vertically */
-    padding: 10px;
     background-color:white;
-    width: 50%;
-    height: 300px;
+    width: 40%;
+    border: 1px solid red;
 }
 
 img {
-    width: 600px;
-    height: 400px;
+    width: 80%;
+    height: 80%;
     border: 0.5px solid black;
     border-radius: 10px;
-    margin-top: 25%;
     box-shadow: #000 0px 0px 10px;
 }
 
@@ -151,7 +151,6 @@ img {
 #txt {  /* style container for right text container */
     /* existing styles */
     position: relative;
-    margin-top: 3vw;
     font-family: Sansita;
 }
 
@@ -168,10 +167,6 @@ img {
 
 .btn-container button {
     margin: 0 10px; /* Espacio entre los botones */
-}
-
-.trip-info {
-    /* any additional styles for the paragraph */
 }
 
 /* Form */	
