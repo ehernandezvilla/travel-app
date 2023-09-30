@@ -9,7 +9,7 @@ function handleButtonClick() {
         return;
     }
 
-    console.log('Button clicked');
+    console.log('Information sent to the server!');
 
     const apiEndpoint = 'http://localhost:8080/getGeonames';
 
@@ -25,7 +25,12 @@ function handleButtonClick() {
         if (data.error){
             throw new Error(data.error);
         }
-        console.log(data);
+        // console.log(data);
+
+
+        // Trip info general data
+        const tripInfoElement = document.getElementById('api-coci');
+        tripInfoElement.innerText = `The information for your trip to ${data.city_name}, ${data.country_name} is`;
 
         // Update the image 
         const imageUrl = data.imageURL;

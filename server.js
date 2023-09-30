@@ -85,6 +85,8 @@ app.post('/getGeonames', async (req, res) => {
         const countryName = data.geonames[0].countryName;
         const lat = data.geonames[0].lat;
         const long = data.geonames[0].lng;
+        const city_name = data.geonames[0].name;
+        const country_name = data.geonames[0].countryName;
 
         // console.log(lat, long); // debug lat, long
 
@@ -122,10 +124,12 @@ app.post('/getGeonames', async (req, res) => {
         const temp = weatherbitData.data[0].temp;
         const weatherDescription = weatherbitData.data[0].weather.description;
         // console.log(temp); // debug temp
-        // console.log(weatherDescription); // debug weatherDescription
+        // console.log(weatherbitData); // debug weatherDescription
 
         res.json({
             message: 'Success!',
+            city_name: city_name,
+            country_name: country_name,
             imageURL: imageURL,
             temperature: temp,
             weatherDescription: weatherDescription,

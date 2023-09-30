@@ -74,10 +74,11 @@ nav {
 .container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     height: auto;
     margin-bottom: 10px;
     margin-top: 10px;
+    gap:5px
 }
 
 /*Local Storage*/
@@ -110,7 +111,7 @@ nav {
     display: block; /* Cambio a block */
     padding: 50px 10px; /* Añadir padding para centrar el contenido verticalmente */
     background-color: white;
-    width: 30%;
+    width: 40%;
     height: 300px;
     border: 1px solid red;
     
@@ -128,8 +129,8 @@ nav {
 }
 
 img {
-    width: 80%;
-    height: 80%;
+    width: 95%;
+    height: 95%;
     border: 0.5px solid black;
     border-radius: 10px;
     box-shadow: #000 0px 0px 10px;
