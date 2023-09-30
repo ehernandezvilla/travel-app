@@ -76,8 +76,26 @@ nav {
     flex-direction: row;
     justify-content: center;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
+
+/*Local Storage*/
+#local-storage {
+    color:white;
+    background-color: #4E4C46;
+    width: 30%;
+    text-align: center;
+    font-family: Sansita;
+    border-radius: 10px;
+}
+
+#trips-container {
+    text-align: left;
+    padding-left: 15px;
+}
+
+/*End Local Storage*/
 
 #form-container {
     display: flex;
