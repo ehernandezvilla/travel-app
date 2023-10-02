@@ -123,6 +123,22 @@ app.post('/getGeonames', async (req, res) => {
         const weatherbitData = await weatherbitResponse.json();
         const temp = weatherbitData.data[0].temp;
         const weatherDescription = weatherbitData.data[0].weather.description;
+
+        // Solicitud a REST Countries
+
+        const RESTCOUNTRIES_URL = `https://restcountries.com/v3.1/name/${country_name}`
+        console.log(country_name)
+        const restcountriesResponse = await fetch(RESTCOUNTRIES_URL);
+
+        if (!restcountriesResponse.ok) {
+            const errorMessage = await restcountriesResponse.text();
+            console.error(`Error from REST Countries: ${errorMessage}`);
+            throw new Error(`Error from REST Countries: ${errorMessage}`);
+        }
+
+        const restcountriesData = await restcountriesResponse.json();
+        console.log(restcountriesData)
+
         // console.log(temp); // debug temp
         // console.log(weatherbitData); // debug weatherDescription
 
@@ -140,8 +156,6 @@ app.post('/getGeonames', async (req, res) => {
         res.status(500).json({ error: 'Server Error' });
     }
 });
-
-
 
 
 

@@ -1,7 +1,7 @@
 const save_btn = document.getElementById('save_trip');
 const remove_btn = document.getElementById('remove_trip');
 const ul = document.querySelector('ul');
-const input = document.getElementById('city');
+const input = document.getElementById('travel-search');
 
 //LocalStorage
 
@@ -19,9 +19,9 @@ const liMaker = (text) => {
 
 save_btn.addEventListener('click', function() { 
     console.log('trip saved!')
-    itemsArray.push(input.value);
+    itemsArray.push(input.innerText);
     localStorage.setItem('items', JSON.stringify(itemsArray));
-    liMaker(input.value);
+    liMaker(input.innerText);
 });
 
 data.forEach((item) => {
