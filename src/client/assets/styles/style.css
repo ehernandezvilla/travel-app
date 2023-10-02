@@ -179,7 +179,7 @@ img {
 #form_body {
     position: relative;
     background-color: #E55604;
-    height: 230px;
+    height: 260px;
     text-align: center;
     border: 10px solid #000; 
     font-family: Sansita;
@@ -198,6 +198,7 @@ input[type="submit"] {
     cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
     font-size: 16px; /* Tamaño del texto */
     transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+    width: 10%;
 }
 
 /* Estilo para el botón al pasar el cursor por encima */
@@ -209,6 +210,28 @@ input[type="submit"]:hover {
 input[type="submit"]:active {
     background-color: #163D54; /* Color de fondo aún más oscuro al hacer clic */
 }
+
+input[type="text"] {
+    background-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/find-256.png');
+    background-repeat: no-repeat; 
+    padding-left: 40px;
+    background-position: 10px center;
+    background-size: 20px 20px;  
+}
+
+/*Estilo para el form */
+
+input {
+    width: 30%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    gap: 5px;
+    margin: 5px;
+    font-size: 20px;
+    font-family: Sansita;;
+}
+
 
 /*End Form*/
 

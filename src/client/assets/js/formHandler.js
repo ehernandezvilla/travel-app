@@ -1,3 +1,6 @@
+
+/* Button handler function */
+
 document.getElementById('city-btn').addEventListener('click', handleButtonClick);
 
 function handleButtonClick() {
@@ -44,8 +47,33 @@ function handleButtonClick() {
     .catch(error => console.error('There was a problem with the fetch operation', error));
 }
 
-
 // export { handleButtonClick}
+
+
+/* Form handler */
+
+document.querySelector('form').addEventListener('submit', handleSubmit);
+
+
+function handleSubmit(e) {
+    e.preventDefault(); // Prevents the page from reloading
+
+    //Capture the data from the text and date inputs
+    console.log('Form submitted!')
+    const destination = document.getElementById('POST-name').value;
+    const departureDate = document.getElementById('POST-date').value;
+
+    // Print the inputted info in the console
+    console.log(`Destination: ${destination} \n Departure date: ${departureDate}`)
+}
+
+
+
+
+
+
+
+
 
 
 
