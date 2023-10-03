@@ -147,6 +147,9 @@ div#saved-items-container>li {
     padding-top: 50px;
 }
 
+div#saved-items-container>ul>li {
+    padding: 5px;
+}
 
 
 #txt {
@@ -156,7 +159,6 @@ div#saved-items-container>li {
     /* border: 1px solid red; */
     box-shadow: #000 0px 0px 10px;
     border-radius: 10px;
-    
 }
 
 /* Img */
@@ -215,14 +217,19 @@ img {
 /* Form */	
 
 #form_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     background-color: #E55604;
-    height: 260px;
+    height: 280px;
     text-align: center;
     font-family: Sansita;
     font-size: 30px;
     margin-top: 0px;
     border-radius: 10px;
+    padding-bottom: 25px;
 }       
 
 
@@ -282,6 +289,7 @@ footer {
     text-align: center;
     font-size: 14px;
     font-family: Sansita;
+    margin-top: 10px;
 }
 
 /* Buttons */
@@ -331,10 +339,19 @@ footer {
 @media only screen and (max-width: 768px) {
     .container {
         flex-direction: column;
+        gap: 13px;
     }
 
     #img, #txt, #local-storage {
         width: 100%;
+    }
+
+    p#travel-search {
+        font-size: 4vw;
+    }
+
+    div#saved-items-container>ul>li {
+        padding: 5px;
     }
 
     input {
@@ -343,5 +360,24 @@ footer {
 
     input[type="submit"] {
         width: 80%;
+    }
+
+    #txt {
+        text-align: center;
+    }
+
+    div.city-travel{
+        padding-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label#city-header {
+        font-size: 4vw;
     }
 }
