@@ -2,7 +2,7 @@
 .main_body {
     display: grid;
     grid-template-rows: 3(1fr) auto;
-    border: 1px solid red; /*Debug purposes*/
+    /* border: 1px solid red; */
 }
 
 /* Search bar */
@@ -97,13 +97,46 @@ nav {
     text-align: center;
     font-family: Sansita;
     border-radius: 10px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     box-shadow: #000 0px 0px 10px;
 }
 
 #trips-container {
     text-align: left;
+}
+
+p#save-input {
+    display: none;
+}
+
+#trips-container> h4 {
+    text-align: left;
     padding-left: 15px;
+}
+
+#trips-container> h3 {
+    text-align: center;
+}
+
+#trips-container> h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+div#button-container {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+div#saved-items-container {
+    text-align: justify;
+    margin-right: 20px;
+}
+
+div#saved-items-container>li {
+    margin-top: 10px;
 }
 
 /*End Local Storage*/
@@ -118,11 +151,9 @@ nav {
 
 #txt {
     display: block; /* Cambio a block */
-    padding: 50px 10px; /* Añadir padding para centrar el contenido verticalmente */
     background-color: white;
     width: 40%;
-    /* height: 300px; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
     box-shadow: #000 0px 0px 10px;
     border-radius: 10px;
     
@@ -136,12 +167,12 @@ nav {
     align-items: center; /* This will center the image vertically */
     background-color:white;
     width: 40%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 img {
     width: 95%;
-    height: 95%;
+    height: auto;
     border: 0.5px solid black;
     border-radius: 10px;
     box-shadow: #000 0px 0px 10px;
@@ -188,10 +219,10 @@ img {
     background-color: #E55604;
     height: 260px;
     text-align: center;
-    border: 10px solid #000; 
     font-family: Sansita;
     font-size: 30px;
-    margin-top: 0px;;
+    margin-top: 0px;
+    border-radius: 10px;
 }       
 
 
@@ -273,6 +304,7 @@ footer {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 10px;
     /* border:2px solid #26577C; */
 }
 
@@ -284,4 +316,32 @@ footer {
     background-color: #C60000;
     /* border:2px solid #fff; */
     color: white;
+}
+
+/* Flag */
+#myFlag {
+    width: 60px;  /* o el tamaño que desees para tu icono */
+    height: auto;
+    margin-top: 20px;
+}
+
+
+/*Mobile */	
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #img, #txt, #local-storage {
+        width: 100%;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    input[type="submit"] {
+        width: 80%;
+    }
 }

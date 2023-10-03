@@ -80,7 +80,7 @@ app.post('/getGeonames', async (req, res) => {
         }
 
         const data = await apiResponse.json();
-        console.log(data)
+        // console.log(data)
         const toponymName = data.geonames[0].toponymName;
         const countryName = data.geonames[0].countryName;
         const lat = data.geonames[0].lat;
@@ -127,7 +127,7 @@ app.post('/getGeonames', async (req, res) => {
         // Solicitud a REST Countries
 
         const RESTCOUNTRIES_URL = `https://restcountries.com/v3.1/name/${country_name}`
-        console.log(country_name)
+        // console.log(country_name)
         const restcountriesResponse = await fetch(RESTCOUNTRIES_URL);
 
         if (!restcountriesResponse.ok) {
@@ -137,10 +137,15 @@ app.post('/getGeonames', async (req, res) => {
         }
 
         const restcountriesData = await restcountriesResponse.json();
-        console.log(restcountriesData)
-
-        // console.log(temp); // debug temp
-        // console.log(weatherbitData); // debug weatherDescription
+        const countryCapital = restcountriesData[0].capital;
+        const countryPopulation = restcountriesData[0].population;
+        const countryFlags = restcountriesData[0].flags.png;
+        const countryTimezones = restcountriesData[0].timezones;
+        const countryLanguages = restcountriesData[0].languages;
+        const countryMaps = restcountriesData[0].maps.openStreetMaps
+        const languageNames = Object.values(countryLanguages);
+        const countryCurrency = restcountriesData[0].currencies;
+        // console.log(restcountriesData)
 
         res.json({
             message: 'Success!',
@@ -149,6 +154,12 @@ app.post('/getGeonames', async (req, res) => {
             imageURL: imageURL,
             temperature: temp,
             weatherDescription: weatherDescription,
+            countryCapital: countryCapital,
+            countryPopulation: countryPopulation,
+            countryFlags: countryFlags,
+            countryTimezones: countryTimezones,
+            languageNames: languageNames,
+            countryMaps: countryMaps
         });
 
     } catch (error) {

@@ -101,7 +101,7 @@ function handleSubmit(e) {
         //Trip info general data
         console.log(data);
         const travelSearch = document.getElementById('travel-search');
-        travelSearch.innerText = `${data.city_name}, ${data.country_name}`;
+        travelSearch.innerHTML = `${data.city_name}, ${data.country_name}`;
         const tripInfoElement = document.getElementById('api-coci');
         tripInfoElement.innerText = `Your trip to ${data.city_name}, ${data.country_name} is ${daysToTrip} days away.`;
 
@@ -114,6 +114,42 @@ function handleSubmit(e) {
 
         const weatherElement = document.getElementById('api-weather');  
         weatherElement.innerHTML = `Temperature: ${data.temperature}°C \n Mostly ${data.weatherDescription} during the day`;
+
+        // Other relevant information
+        const otherInfo = document.querySelector('#other-info');
+        otherInfo.innerText = `The languages are ${data.languageNames} and the capital is ${data.countryCapital}.\n The population is ${data.countryPopulation}.\n The timezones are ${data.countryTimezones}.\n`;
+
+
+        // Flag item
+
+        const flagElement = document.createElement('img'); 
+        flagElement.src = data.countryFlags;
+        flagElement.alt = 'Flag';
+        flagElement.id = 'myFlag';
+        // console.log(data.countryMaps)
+        
+        
+
+        // Map item
+
+        const linkElement = document.createElement('a');
+        linkElement.href = data.countryMaps;
+        linkElement.target = '_blank';
+        
+        // Adding link
+        linkElement.appendChild(flagElement);
+
+        // Adding to parent 
+        const parentDiv = document.getElementById('other-info');
+        parentDiv.appendChild(linkElement);
+
+
+
+        // Information to save 
+
+        const tripSave = document.getElementById('save-input');
+        tripSave.innerText = `${data.city_name}, ${data.country_name}: ${daysToTrip} days away. Projected  temperature ${data.temperature}°C mostly ${data.weatherDescription} during the day. The languages are ${data.languageNames} and the capital is ${data.countryCapital}.\n`;
+
     })
     .catch(error => console.error('There was a problem with the fetch operation', error));
 }
@@ -128,30 +164,3 @@ function handleSubmit(e) {
 
 
 
-// function handleSubmit(e) {
-//     e.preventDefault();
-
-//     let destination = document.querySelector('#city').value;
-
-//     if (!destination.trim()) {
-//         alert('Please enter a valid destination');
-//         return;
-//     }
-
-//     console.log('Form submitted')
-
-//     const apiEndpoint = 'http://localhost:8080/test';
-
-//     fetch(apiEndpoint, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({destination: destination})
-//     })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     .catch(err => console.log(err));
-// }
-
-// export { handleSubmit}

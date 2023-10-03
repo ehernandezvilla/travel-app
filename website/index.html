@@ -39,20 +39,25 @@
                 </div>
                 <p class="trip-info" id="api-coci">Search to display the information for your trip</p> <!-- from the form date inputed to the actual date-->
                 <!-- include variables response from API -->
-                <p id="save-input">Info to save:</p> <!-- display none pending-->
+                <p id="save-input">No information to save</p> <!-- display none pending-->
                 <h3>Typical weather for then:</h3>
-                <p class="trip-info" id="api-weather"><br> <!-- include variable response from API-->
-                    </p>
+                <p class="trip-info" id="api-weather"><br></p>
+                <h3>Other relevant information for your trip:</h3>
+                <p class="trip-info" id="other-info"></p>
             </div>
             <div id="local-storage">
-                <h2>My saved trips</h2>
                 <div id="trips-container">
+                    <h2>My saved trips</h2>
                     <h3>My itinerary</h3>
                     <h4>Items:</h4>
-                    <ul></ul>
+                <div id="saved-items-container">
+                    <ul>
+                    </ul>
                     <br>
-                    <br>
+                </div>  
+                <div id="button-container">
                     <button id="remove_trip" class="btn2">Clear All</button>
+                </div>
                 </div>
             </div>
         </div>
