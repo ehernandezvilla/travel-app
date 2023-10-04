@@ -182,7 +182,7 @@ img {
 
 #img img {
 	-webkit-transform: scale(1.5);
-	transform: scale(1.03);
+	transform: scale(1.02);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
@@ -197,6 +197,7 @@ img {
     /* existing styles */
     position: relative;
     font-family: Sansita;
+    padding-left: 20px;
 }
 
 #txt h2 {
@@ -217,8 +218,8 @@ img {
 /* Form */	
 
 #form_body {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     align-items: center;
     justify-content: space-between;
     position: relative;
@@ -347,7 +348,7 @@ footer {
     }
 
     p#travel-search {
-        font-size: 4vw;
+        font-size: 6vw;
     }
 
     div#saved-items-container>ul>li {
@@ -364,6 +365,7 @@ footer {
 
     #txt {
         text-align: center;
+        padding-left: 0px;
     }
 
     div.city-travel{
@@ -378,6 +380,11 @@ footer {
     }
 
     label#city-header {
-        font-size: 4vw;
+        font-size: 6vw;
+    }
+
+    div#header>h1 {
+        font-size: 35px;
+        padding-top: 15px;
     }
 }
