@@ -83,7 +83,7 @@ function handleSubmit(e) {
 
     console.log('Form submitted!')
 
-    const apiEndpoint = 'process.env.API_URL';
+    const apiEndpoint = 'https://travel-app-1c31.onrender.com/getGeonames';
 
     fetch(apiEndpoint, {
         method: 'POST',
