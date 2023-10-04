@@ -1,5 +1,6 @@
-const fetch = require('node-fetch');
-require('dotenv').config();
+var path = require('path')
+const fetch = require('node-fetch')
+require('dotenv').config()
 
 
 const PIXABAY_API = `${process.env.PIXABAY_API}`;
@@ -29,11 +30,17 @@ app.use(cors({
 }));
 
 // Initialize the main project folder
-app.use(express.static('website'));
+app.use(express.static('dist'));
+
+console.log(__dirname)
+
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html')
+});
 
 const port = 8081;
 // Setup Server
-const server = app.listen(port, listening);
+const server = app.listen(port, '0.0.0.0', listening);
 function listening() {
     console.log(`running on localhost: ${port}`);
 };
@@ -47,23 +54,6 @@ function sendData(request, response) {
     response.send('Welcome to the travel app project!');
 };
 
-// POST Test 
-
-// app.post('/test', async (req, res) => {
-//     try {
-//         const formValue = req.body.destination;
-//         const [city, country] = req.body.destination.split(',');
-//         console.log(city, country);
-//         // console.log(formValue.split(','));
-//         res.json({message: 'Success!', data: formValue});
-//     }
-//     catch {
-//         console.log('error', error);
-//         res.status(500).send(error);
-//     }
-// });
-
-// GET getGeonames
 
 
 app.post('/getGeonames', async (req, res) => {

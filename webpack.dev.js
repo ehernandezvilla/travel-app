@@ -1,13 +1,13 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/client/index.js',
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.min.js',
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
         libraryTarget: 'var',
         library: 'Client'
     },
@@ -17,7 +17,17 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'] // order matters
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    }
+                }
             }
         ]
     },
@@ -27,11 +37,17 @@ module.exports = {
             filename: "./index.html",
         }),
         new CleanWebpackPlugin({
-            dry: true, // Simulate the removal of files
-            verbose: true, // Write Logs to console
-            cleanStaleWebpackAssets: true, // Automatically remove all unused webpack assets on rebuild
-        
+            dry: true,
+            verbose: true,
+            cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         })
-    ]
-}
+    ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        open: true,
+        port: 8080
+    }
+};

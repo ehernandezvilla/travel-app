@@ -83,7 +83,7 @@ function handleSubmit(e) {
 
     console.log('Form submitted!')
 
-    const apiEndpoint = 'http://localhost:8081/getGeonames';
+    const apiEndpoint = 'process.env.API_URL';
 
     fetch(apiEndpoint, {
         method: 'POST',
