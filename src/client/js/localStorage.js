@@ -5,7 +5,7 @@ const input = document.getElementById('save-input');
 
 //LocalStorage
 
-let = itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 localStorage.setItem('items', JSON.stringify(itemsArray));
 const data = JSON.parse(localStorage.getItem('items'));

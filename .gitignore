@@ -6,3 +6,6 @@ website/app_test.js
 /node_modules
 /AnimaPackage-Html-uW42g
 *.zip
+dist
+node_modules
+.vscode

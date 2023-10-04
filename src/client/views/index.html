@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/travel-app/src/client/assets/styles/style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,700&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Travel App - Bakslash</title>
+</head>
+
+<body>
+    <nav id="main-nav" class="all_body">
+        <div id="header">
+            <h1>Travel Planner</h1>
+        </div>
+    </nav>
+    <div id="main_body" class="all_body">
+        <div class="container">
+            <div id="img">
+                <img src="https://a.cdn-hotels.com/gdcs/production164/d1916/a3c64a1f-b238-4947-896f-27d7a1f51c89.jpg?impolicy=fcrop&w=800&h=533&q=medium"
+                    alt="nyc"> <!-- include variable from PixelAPI-->
+            </div>
+            <div id="txt">
+                <div class="city-travel">
+                    <label for="city" id="city-header">My Trip to:</label>
+                    <p id="travel-search"></p>
+                    <!-- <textarea id="city" id="destination-holder" name="city" rows="1" cols="30"
+                        placeholder="Destination"></textarea>  -->
+                    <!-- <button id="city-btn" class="btn1">search</button> -->
+                </div>
+                <div class="btn-container">
+                    <button class="btn1" id="save_trip">save trip</button>
+                    <!-- <button class="btn2" id="remove_trip">remove trip</button> -->
+                </div>
+                <p class="trip-info" id="api-coci">Search to display the information for your trip</p> <!-- from the form date inputed to the actual date-->
+                <!-- include variables response from API -->
+                <p id="save-input">No information to save</p> <!-- display none pending-->
+                <h3>Typical weather for then:</h3>
+                <p class="trip-info" id="api-weather"><br></p>
+                <h3>Other relevant information for your trip:</h3>
+                <p class="trip-info" id="other-info"></p>
+            </div>
+            <div id="local-storage">
+                <div id="trips-container">
+                    <h2>My saved trips</h2>
+                    <h3>My itinerary</h3>
+                    <h4>Items:</h4>
+                <div id="saved-items-container">
+                    <ul>
+                    </ul>
+                    <br>
+                </div>  
+                <div id="button-container">
+                    <button id="remove_trip" class="btn2">Clear All</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end all body -->
+    <div id="form_body" class="all_body">
+        <div id="form-container">
+            <form action="#" method="post">
+                <label for="POST-name">My trip to:</label>
+                <input id="POST-name" type="text" name="name" placeholder="Enter the destination" />
+                <br>
+                <label for="POST-date">Departing:</label>
+                <input id="POST-date" type="date" name="date" />
+                <br>
+                <input type="submit" value="search"/> <!-- disable until the form is filled -->
+            </form>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <p>created by: <a href src="">ehernandezvilla</href>
+        </p>
+    </footer>
+    <!-- <script src="/travel-app/src/client/assets/js/test.js"></script> -->
+    <!-- <script src="/travel-app/src/client/assets/js/formHandler.js"></script>
+    <script src="/travel-app/src/client/assets/js/localStorage.js"></script> -->
+</body>
+
+</html>

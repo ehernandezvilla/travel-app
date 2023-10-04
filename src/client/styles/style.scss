@@ -1,0 +1,390 @@
+/*General */
+.main_body {
+    display: grid;
+    grid-template-rows: 3(1fr) auto;
+    /* border: 1px solid red; */
+}
+
+/* Search bar */
+
+.city-travel {
+    display: flex;           /* Establece los elementos en una fila */
+    align-items: center;     /* Centra los elementos verticalmente */
+    gap: 5px;               /* Espacio entre los elementos */
+}
+
+#city-header {
+    font-size: 2.3vw;
+    font-weight: bold; 
+    margin: 0;               /* Elimina el margen predeterminado */
+}
+
+textarea {
+    width: 3px !important;
+    height: auto;;
+    border-radius: 10px;
+    padding: 5px;
+    flex-grow: 1;    /* Permite que el textarea crezca para ocupar el espacio disponible */
+    font-size: 1.5vw;
+    font-family: Sansita;
+    font-weight: bold;
+    border: 0px solid #26577C;
+}
+
+textarea:focus {
+    width: 3px !important;
+    height: auto;
+    outline: none;
+}
+
+p#travel-search {
+    font-size: 2.2vw;
+    font-family: 'Sansita';
+    font-weight: 700;
+    color: #E55604
+}
+
+
+/*End search bar*
+
+/*End General*/
+
+/*Nav Bar */
+nav {
+    background-color: #26577C;
+    color: white;
+    height: 100px;
+    font-family: Kanit;
+    padding-bottom: 20px;
+    margin-top: -45px;
+}
+
+#header{
+    position: absolute;
+    font-size: 35px;
+    padding-left: 20%;
+}
+
+
+/*End Nav Bar */
+
+/*Body*/
+/*Main*/
+#all_body {
+    background-color: white;
+}
+/*End Main*/
+
+
+/*End Body*/
+
+/*Middle*/
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    gap:5px
+}
+
+/*Local Storage*/
+#local-storage {
+    color:white;
+    background-color: #4E4C46;
+    width: 20%;
+    text-align: center;
+    font-family: Sansita;
+    border-radius: 10px;
+    /* border: 1px solid red; */
+    box-shadow: #000 0px 0px 10px;
+}
+
+#trips-container {
+    text-align: left;
+}
+
+p#save-input {
+    display: none;
+}
+
+#trips-container> h4 {
+    text-align: left;
+    padding-left: 15px;
+}
+
+#trips-container> h3 {
+    text-align: center;
+}
+
+#trips-container> h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+div#button-container {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+div#saved-items-container {
+    text-align: justify;
+    margin-right: 20px;
+}
+
+div#saved-items-container>li {
+    margin-top: 10px;
+}
+
+/*End Local Storage*/
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+div#saved-items-container>ul>li {
+    padding: 5px;
+}
+
+
+#txt {
+    display: block; /* Cambio a block */
+    background-color: white;
+    width: 40%;
+    /* border: 1px solid red; */
+    box-shadow: #000 0px 0px 10px;
+    border-radius: 10px;
+}
+
+/* Img */
+
+#img {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will center the image vertically */
+    background-color:white;
+    width: 40%;
+    /* border: 1px solid red; */
+}
+
+img {
+    width: 95%;
+    height: auto;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    box-shadow: #000 0px 0px 10px;
+}
+
+#img img {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.02);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#img:hover img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+/*End image */
+
+#txt {  /* style container for right text container */
+    /* existing styles */
+    position: relative;
+    font-family: Sansita;
+    padding-left: 20px;
+}
+
+#txt h2 {
+    margin-bottom: 20px; /* space below the heading */
+}
+
+.btn-container {
+    display: flex; /* Alinear los botones horizontalmente */
+    justify-content: left;
+    margin-left: -10px; 
+    margin-bottom: 20px; /* Espacio debajo de los botones */
+}
+
+.btn-container button {
+    margin: 0 10px; /* Espacio entre los botones */
+}
+
+/* Form */	
+
+#form_body {
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    background-color: #E55604;
+    height: 280px;
+    text-align: center;
+    font-family: Sansita;
+    font-size: 30px;
+    margin-top: 0px;
+    border-radius: 10px;
+    padding-bottom: 25px;
+}       
+
+
+/* Estilo para el botón */
+input[type="submit"] {
+    background-color: #26577C; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+    font-size: 16px; /* Tamaño del texto */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+    width: 10%;
+}
+
+/* Estilo para el botón al pasar el cursor por encima */
+input[type="submit"]:hover {
+    background-color: #1F4A6A; /* Color de fondo un poco más oscuro al pasar el cursor por encima */
+}
+
+/* Estilo para el botón al hacer clic */
+input[type="submit"]:active {
+    background-color: #163D54; /* Color de fondo aún más oscuro al hacer clic */
+}
+
+input[type="text"] {
+    background-image: url('https://cdn4.iconfinder.com/data/icons/linecon/512/find-256.png');
+    background-repeat: no-repeat; 
+    padding-left: 40px;
+    background-position: 10px center;
+    background-size: 20px 20px;  
+}
+
+/*Estilo para el form */
+
+input {
+    width: 30%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    gap: 5px;
+    margin: 5px;
+    font-size: 20px;
+    font-family: Sansita;;
+}
+
+
+/*End Form*/
+
+/*End Middle*/
+
+/* Footer */
+footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-family: Sansita;
+    margin-top: 10px;
+}
+
+/* Buttons */
+
+.btn1 {
+    background-color: #26577C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn2 {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    /* border:2px solid #26577C; */
+}
+
+.btn1:hover {
+    background-color: #1A3A4A;
+}
+
+.btn2:hover {
+    background-color: #C60000;
+    /* border:2px solid #fff; */
+    color: white;
+}
+
+/* Flag */
+#myFlag {
+    width: 60px;  /* o el tamaño que desees para tu icono */
+    height: auto;
+    margin-top: 20px;
+}
+
+
+/*Mobile */	
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    #img, #txt, #local-storage {
+        width: 100%;
+    }
+
+    p#travel-search {
+        font-size: 6vw;
+    }
+
+    div#saved-items-container>ul>li {
+        padding: 5px;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    input[type="submit"] {
+        width: 80%;
+    }
+
+    #txt {
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    div.city-travel{
+        padding-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div.btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label#city-header {
+        font-size: 6vw;
+    }
+
+    div#header>h1 {
+        font-size: 35px;
+        padding-top: 15px;
+    }
+}
