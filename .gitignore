@@ -9,3 +9,5 @@ website/app_test.js
 dist
 node_modules
 .vscode
+_website
+_server.js

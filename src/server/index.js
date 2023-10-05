@@ -11,7 +11,7 @@ const GEONAMES_URL = `http://api.geonames.org/searchJSON?maxRows=1`
 
 
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+var projectData = {};
 
 // Require Express to run server and routes
 const express = require('express');
@@ -163,7 +163,7 @@ app.post('/getGeonames', async (req, res) => {
 
 
 
-
+module.exports = app; // Export app for testing
 
 
 

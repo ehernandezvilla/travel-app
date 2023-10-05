@@ -46,7 +46,7 @@
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open",
     "build-prod": "webpack --config webpack.prod.js",
     "start": "node src/server/index.js",
-    "test": "jest"
+    "test": "jest" 
   },
   "version": "1.0.0"
 }
