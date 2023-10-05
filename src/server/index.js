@@ -59,6 +59,7 @@ function sendData(request, response) {
 app.post('/getGeonames', async (req, res) => {
     try {
         const [city, country] = req.body.destination.split(',');
+        // console.log(city, country) // debug city, country
         const apiResponse = await fetch(`${GEONAMES_URL}&name_startsWith=${city}&country=${country}&username=${GEONAMES_USERNAME}`, {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
@@ -72,13 +73,15 @@ app.post('/getGeonames', async (req, res) => {
         const data = await apiResponse.json();
         // console.log(data)
         const toponymName = data.geonames[0].toponymName;
+        // console.log(toponymName) // debug toponymName
         const countryName = data.geonames[0].countryName;
+        // console.log(countryName) // debug countryName
         const lat = data.geonames[0].lat;
         const long = data.geonames[0].lng;
+        // console.log(lat, long) // debug lat, long
         const city_name = data.geonames[0].name;
         const country_name = data.geonames[0].countryName;
-
-        // console.log(lat, long); // debug lat, long
+        // console.log(country_name) // debug country_name
 
         // Solicitud a Pixabay
 
@@ -116,7 +119,7 @@ app.post('/getGeonames', async (req, res) => {
 
         // Solicitud a REST Countries
 
-        const RESTCOUNTRIES_URL = `https://restcountries.com/v3.1/name/${country_name}`
+        const RESTCOUNTRIES_URL = `https://restcountries.com/v3.1/name/${country_name}?fullText=true`
         // console.log(country_name)
         const restcountriesResponse = await fetch(RESTCOUNTRIES_URL);
 

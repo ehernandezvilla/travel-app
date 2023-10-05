@@ -32,7 +32,8 @@
     "sass": "^1.68.0",
     "sass-loader": "^13.3.2",
     "supertest": "^6.3.3",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "workbox-webpack-plugin": "^7.0.0"
   },
   "engines": {
     "node": ">=20.5.0",
