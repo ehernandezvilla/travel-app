@@ -4,6 +4,11 @@
 
 The Travel App project is a web application that allows users to plan their trips by providing information about the destination such as weather, images, and other relevant data.
 
+![Web version](https://raw.githubusercontent.com/ehernandezvilla/travel-app/main/src/client/images/127.0.0.1_5500_travel-app_website_index.html.png)
+<!-- markdownlint-disable MD033 -->
+<img src="src/client/images/127.0.0.1_5500_travel-app_website_index.html(iPhone XR).png" alt="Project Screenshot" width="300"/>
+<!-- markdownlint-enable MD033 -->
+
 ## Features
 
 - Search for a destination city and country.
